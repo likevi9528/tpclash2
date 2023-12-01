@@ -124,7 +124,7 @@ var rootCmd = &cobra.Command{
 		}
 
 		if conf.EnableTracing {
-			logrus.Infof("[main] 🔪 恐惧, 是万敌之首...")
+			logrus.Infof("[main] 🔪 恐惧, 是万敌之首....")
 
 			tracingStopCtx, tracingStopCancel := context.WithTimeout(context.Background(), 30*time.Second)
 			defer tracingStopCancel()
