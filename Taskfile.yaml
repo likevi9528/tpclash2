@@ -86,7 +86,7 @@ tasks:
     cmds:
       - git clone https://github.com/haishanh/yacd.git build/yacd
       - defer: rm -rf build/yacd
-      - git clone https://github.com/Dreamacro/clash-dashboard.git build/official
+      - git clone https://github.com/noahss/clash-dashboard.git build/official
       - defer: rm -rf build/official
       - (cd build/yacd && pnpm install && pnpm build)
       - (cd build/official && pnpm install && pnpm build)
