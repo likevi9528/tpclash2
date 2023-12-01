@@ -62,9 +62,9 @@ jobs:
           branch="${GITHUB_REF##*/}"
         fi
         git checkout -b "$branch" || true
-    - name: Docker Login
-      shell: bash
-      run: docker login --username "${DOCKERHUB_USERNAME}" --password "${DOCKERHUB_PASSWORD}"
+    # - name: Docker Login
+    #   shell: bash
+    #   run: docker login --username "${DOCKERHUB_USERNAME}" --password "${DOCKERHUB_PASSWORD}"
     - name: Use Node.js
       uses: actions/setup-node@v3
       with:
