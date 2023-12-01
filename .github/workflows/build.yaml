@@ -21,35 +21,35 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Check Comment Content
-      id: check-comment
-      uses: actions/github-script@v6
-      with:
-        script: |
-          const commentBody = context.payload.comment.body;
-          const regex = /^rebuild$/;
-          const shouldContinue = regex.test(commentBody);
-          if (!shouldContinue) {
-            console.log('Terminating workflow');
-            process.exit(1);
-          }
-    - name: Notify User
-      uses: actions/github-script@v6
-      with:
-        script: |
-          const comment = `
-          > ${context.payload.comment.body}
-          > [Original Comment](https://github.com/${process.env.GITHUB_REPOSITORY}/issues/${context.issue.number}#issuecomment-${context.payload.comment.id})
+    # - name: Check Comment Content
+    #   id: check-comment
+    #   uses: actions/github-script@v6
+    #   with:
+    #     script: |
+    #       const commentBody = context.payload.comment.body;
+    #       const regex = /^rebuild$/;
+    #       const shouldContinue = regex.test(commentBody);
+    #       if (!shouldContinue) {
+    #         console.log('Terminating workflow');
+    #         process.exit(1);
+    #       }
+    # - name: Notify User
+    #   uses: actions/github-script@v6
+    #   with:
+    #     script: |
+    #       const comment = `
+    #       > ${context.payload.comment.body}
+    #       > [Original Comment](https://github.com/${process.env.GITHUB_REPOSITORY}/issues/${context.issue.number}#issuecomment-${context.payload.comment.id})
 
-          @${context.payload.comment.user.login} GitHub Action has been re-run! Here is the link to the current workflow: [Workflow](${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID})
-          `;
+    #       @${context.payload.comment.user.login} GitHub Action has been re-run! Here is the link to the current workflow: [Workflow](${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID})
+    #       `;
 
-          github.rest.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: comment,
-          });
+    #       github.rest.issues.createComment({
+    #         issue_number: context.issue.number,
+    #         owner: context.repo.owner,
+    #         repo: context.repo.repo,
+    #         body: comment,
+    #       });
     - name: Checkout
       uses: actions/checkout@v3
     - name: Put back the git branch into git
