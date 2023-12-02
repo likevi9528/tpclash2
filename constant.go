@@ -63,11 +63,11 @@ dns:
     - '*.lan'
     - '*.local'
   default-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
+    - 127.0.0.1
+    // - 119.29.29.29
   nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
+    - 127.0.0.1
+    // - 119.29.29.29
 `
 	nicPatch = `# TPClash Nic AutoFix
 interface-name: {{MainNic}}
