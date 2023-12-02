@@ -69,10 +69,15 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '20.x'
-    - name: Use Golang
-      uses: actions/setup-go@v4
+    # - name: Use Golang
+    #   uses: actions/setup-go@v4
+    #   with:
+    #     go-version: 'stable'
+    
+    - name: Setup Go
+      uses: actions/setup-go@v3
       with:
-        go-version: 'stable'
+        go-version: "1.18.0"
     - name: Install Deps
       shell: bash
       run: |
