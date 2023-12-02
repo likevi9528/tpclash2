@@ -74,10 +74,10 @@ jobs:
     #   with:
     #     go-version: 'stable'
     
-    - name: Setup Go
-      uses: actions/setup-go@v3
+    - name: Set up Go 1.19
+      uses: actions/setup-go@v1
       with:
-        go-version: "1.18.0"
+        go-version: 1.19.13
     - name: Install Deps
       shell: bash
       run: |
@@ -107,7 +107,7 @@ jobs:
         replacesArtifacts: true
         token: ${{ secrets.GH_TOKEN }}
         body: |
-          ### 只premium内核编译
+          ### 只premium内核编译, nameserver设置为127.0.0.1
     # - name: Create Comment Reply
     #   uses: actions/github-script@v6
     #   with:
