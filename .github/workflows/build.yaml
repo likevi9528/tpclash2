@@ -77,7 +77,7 @@ jobs:
       shell: bash
       run: |
         npm install -g pnpm @go-task/cli
-   - name: Build TPClash
+    - name: Build TPClash
       shell: bash
       run: task
     - name: Get current date
