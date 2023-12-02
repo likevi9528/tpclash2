@@ -133,9 +133,13 @@ dns:
   fake-ip-range: 198.18.0.1/16
   default-nameserver:
     - 127.0.0.1
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
     # - 119.29.29.29
   nameserver:
     - 127.0.0.1
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
     # - 119.29.29.29
 ```
 
@@ -173,10 +177,12 @@ dns:
   fake-ip-range: 198.18.0.1/16
   default-nameserver:
     - 127.0.0.1
-    # - 119.29.29.29
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
   nameserver:
     - 127.0.0.1
-    # - 119.29.29.29
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
 ```
 
 ### 3.3、Meta 用户

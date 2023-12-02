@@ -51,7 +51,8 @@ storage:
         inline: |
           [Resolve]
           DNS=127.0.0.1
-          # DNS=119.29.29.29
+          DNS=tls://1.0.0.1:853
+          DNS=tls://dns.google:853
           Domains=~.
           DNSStubListener=no
 

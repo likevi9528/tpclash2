@@ -64,9 +64,13 @@ dns:
     - '*.local'
   default-nameserver:
     - 127.0.0.1
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
     // - 119.29.29.29
   nameserver:
     - 127.0.0.1
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
     // - 119.29.29.29
 `
 	nicPatch = `# TPClash Nic AutoFix
