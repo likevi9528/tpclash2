@@ -184,8 +184,8 @@ tasks:
       - task: copy-clash-premium
         vars: { PLATFORM: "{{.PLATFORM}}" }
       - |
-         CGO_ENABLED=0 GOOS={{.GOOS}} GOARCH={{.GOARCH}} GOARM={{.GOARM}} GOAMD64={{.GOAMD64}} GOMIPS={{.GOMIPS}} \
-        go build -trimpath -o build/tpclash-premium-{{.GOOS}}-{{.GOARCH}}{{if .GOAMD64}}-{{.GOAMD64}}{{end}} \
+         GOOS={{.GOOS}} GOARCH={{.GOARCH}} GOARM={{.GOARM}} GOAMD64={{.GOAMD64}} GOMIPS={{.GOMIPS}} \
+        CGO_ENABLED=0 && go build -trimpath -o build/tpclash-premium-{{.GOOS}}-{{.GOARCH}}{{if .GOAMD64}}-{{.GOAMD64}}{{end}} \
           -ldflags "{{if not .DEBUG}}-w -s{{end}} \
           -X 'main.build={{.BUILD_DATE}}' \
           -X 'main.commit={{.COMMIT_SHA}}' \
