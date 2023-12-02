@@ -7,22 +7,22 @@ vars:
     sh: git rev-parse HEAD
   BUILD_DATE:
     sh: date '+%F %T'
-  PREMIUM_VERSION:
-    sh: |
-      curl -sSL {{if .GITHUB_TOKEN}}-H 'Authorization: Bearer {{.GITHUB_TOKEN}}'{{end}} \
-        https://api.github.com/repos/Dreamacro/clash/releases/tags/premium | jq -r '.name'
-  META_VERSION:
-    sh: |
-      curl -sSL {{if .GITHUB_TOKEN}}-H 'Authorization: Bearer {{.GITHUB_TOKEN}}'{{end}} \
-        https://api.github.com/repos/MetaCubeX/Clash.Meta/releases/latest | jq -r '.name'
-  META_DASHBOARD_VERSION:
-    sh: |
-      curl -sSL {{if .GITHUB_TOKEN}}-H 'Authorization: Bearer {{.GITHUB_TOKEN}}'{{end}} \
-        https://api.github.com/repos/MetaCubeX/metacubexd/releases/latest | jq -r '.name'
-  META_DASHBOARD_YACD_VERSION:
-    sh: |
-      curl -sSL {{if .GITHUB_TOKEN}}-H 'Authorization: Bearer {{.GITHUB_TOKEN}}'{{end}} \
-        https://api.github.com/repos/MetaCubeX/Yacd-meta/releases/latest | jq -r '.name'
+  PREMIUM_VERSION: v1.18.0
+    # sh: |
+    #   curl -sSL {{if .GITHUB_TOKEN}}-H 'Authorization: Bearer {{.GITHUB_TOKEN}}'{{end}} \
+    #     https://api.github.com/repos/Dreamacro/clash/releases/tags/premium | jq -r '.name'
+  # META_VERSION:
+  #   sh: |
+  #     curl -sSL {{if .GITHUB_TOKEN}}-H 'Authorization: Bearer {{.GITHUB_TOKEN}}'{{end}} \
+  #       https://api.github.com/repos/MetaCubeX/Clash.Meta/releases/latest | jq -r '.name'
+  # META_DASHBOARD_VERSION:
+  #   sh: |
+  #     curl -sSL {{if .GITHUB_TOKEN}}-H 'Authorization: Bearer {{.GITHUB_TOKEN}}'{{end}} \
+  #       https://api.github.com/repos/MetaCubeX/metacubexd/releases/latest | jq -r '.name'
+  # META_DASHBOARD_YACD_VERSION:
+  #   sh: |
+  #     curl -sSL {{if .GITHUB_TOKEN}}-H 'Authorization: Bearer {{.GITHUB_TOKEN}}'{{end}} \
+  #       https://api.github.com/repos/MetaCubeX/Yacd-meta/releases/latest | jq -r '.name'
 
 tasks:
   clean:
